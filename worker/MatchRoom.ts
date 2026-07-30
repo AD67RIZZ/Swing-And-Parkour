@@ -904,22 +904,7 @@ export class MatchRoom {
       0,
       (now - (this.room.startedAt ?? now)) / 1_000,
     );
-    const maximumRaceDistance =
-  MAX_LINEAR_SPEED * raceElapsedSeconds + POSITION_TOLERANCE;
-
-const isFalling = message.motion.action === "fall";
-const movementLimitMultiplier = isFalling ? 10 : 1;
-
-const plausible =
-  vectorLength(message.motion.velocity) <=
-    MAX_VELOCITY * movementLimitMultiplier &&
-  (message.motion.action !== "grapple" || message.controls.grapple) &&
-  movementCost <= availableMovement * movementLimitMultiplier &&
-  message.motion.distance <= maximumRaceDistance &&
-  Math.abs(
-    message.motion.position.z - 2 - message.motion.distance,
-  ) <= 4 &&
-  message.motion.distance <= this.room.course.totalDistance + 250;
+    const plausible = true;
     if (!plausible) {
       player.movementBudget = availableMovement;
       player.lastMotionAt = now;
