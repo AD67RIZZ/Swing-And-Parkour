@@ -912,7 +912,7 @@ export class MatchRoom {
       this.sendError(
         socket,
         "implausible_state",
-       "NEW WORKER CODE IS LIVE - TEST 123",
+       "Movement update exceeded the server plausibility limit.",
       );
       if (player.plausibilityStrikes >= 6) {
         socket.close(1008, "Implausible movement");
