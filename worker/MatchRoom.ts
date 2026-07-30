@@ -904,7 +904,7 @@ export class MatchRoom {
       0,
       (now - (this.room.startedAt ?? now)) / 1_000,
     );
-    const plausible = false;
+    const plausible = true;
     if (!plausible) {
       player.movementBudget = availableMovement;
       player.lastMotionAt = now;
