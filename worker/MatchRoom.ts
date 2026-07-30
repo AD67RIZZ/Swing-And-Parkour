@@ -908,7 +908,7 @@ export class MatchRoom {
   MAX_LINEAR_SPEED * raceElapsedSeconds + POSITION_TOLERANCE;
 
 const isFalling = message.motion.action === "fall";
-const movementLimitMultiplier = isFalling ? 2 : 1;
+const movementLimitMultiplier = isFalling ? 10 : 1;
 
 const plausible =
   vectorLength(message.motion.velocity) <=
